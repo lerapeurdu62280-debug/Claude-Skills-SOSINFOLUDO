@@ -27,12 +27,19 @@ foreach ($p in $plugins) { claude plugin install $p }
 
 Etape 'Serveur C# pour csharp-lsp'
 if (Manque 'dotnet') { Write-Host 'SDK .NET absent : csharp-lsp restera inactif.' -ForegroundColor Yellow }
-elseif (Manque 'csharp-ls') { dotnet tool install -g csharp-ls }
+elseif (Manque 'csharp-ls') {
+  dotnet tool install -g csharp-ls
+  # les dernières versions exigent un .NET récent : repli sur 0.15.0, compatible .NET 8
+  if ($LASTEXITCODE -ne 0) { dotnet tool install -g csharp-ls --version 0.15.0 }
+}
 
 $skills = Join-Path $HOME '.claude\skills'
 New-Item -ItemType Directory -Force $skills | Out-Null
 
 Etape 'Skills de design (npx skills)'
+# Node installé mais absent du PATH de cette fenêtre (installation récente) : on l'ajoute
+$nodeDir = Join-Path $env:ProgramFiles 'nodejs'
+if ((Manque 'npx') -and (Test-Path "$nodeDir\npx.cmd")) { $env:Path = "$nodeDir;$env:Path" }
 if (Manque 'npx') { Write-Host 'Node.js absent : hallmark et web-design-engineer ignorés.' -ForegroundColor Yellow }
 else {
   npx -y skills add nutlope/hallmark -g --agent claude-code
@@ -60,7 +67,15 @@ try {
 } finally { Remove-Item -Recurse -Force $tmp -ErrorAction SilentlyContinue }
 
 Etape 'graphify'
-if (Manque 'uv') { Write-Host 'uv absent : installez-le puis lancez « uv tool install graphifyy ; graphify install ».' -ForegroundColor Yellow }
-else { uv tool install graphifyy; graphify install }
+if ((Manque 'uv') -and -not (Manque 'winget')) {
+  winget install --id astral-sh.uv -e --accept-source-agreements --accept-package-agreements
+  $env:Path = [Environment]::GetEnvironmentVariable('Path', 'User') + ';' + [Environment]::GetEnvironmentVariable('Path', 'Machine')
+}
+if (Manque 'uv') { Write-Host 'uv absent : installez-le (https://docs.astral.sh/uv/) puis lancez « uv tool install graphifyy ; graphify install ».' -ForegroundColor Yellow }
+else {
+  uv tool install graphifyy
+  $env:Path = "$HOME\.local\bin;$env:Path"  # dossier où uv dépose graphify
+  graphify install
+}
 
 Write-Host "`nTerminé. Dans Claude Code, tapez /reload-plugins (ou relancez-le)." -ForegroundColor Green

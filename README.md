@@ -41,7 +41,9 @@ irm https://raw.githubusercontent.com/lerapeurdu62280-debug/Claude-Skills-SOSINF
 
 Puis, dans Claude Code : `/reload-plugins`.
 
-Le script ne fait qu'ajouter des boutiques et des skills : relisez [`install.ps1`](install.ps1) avant de le lancer, c'est une bonne habitude avec n'importe quel script trouvé en ligne. Il saute proprement ce qui manque (Node.js, uv, SDK .NET) et ne réinstalle pas ce qui est déjà là.
+Le script ne fait qu'ajouter des boutiques et des skills : relisez [`install.ps1`](install.ps1) avant de le lancer, c'est une bonne habitude avec n'importe quel script trouvé en ligne. Il saute proprement ce qui manque (Node.js, SDK .NET), installe uv avec winget si besoin, et ne réinstalle pas ce qui est déjà là.
+
+> La boutique `alirezarezvani/claude-skills` est volumineuse : son téléchargement peut prendre plusieurs minutes. Laissez-le finir. Si vous lancez le script depuis un agent IA, donnez-lui un délai d'au moins 10 minutes.
 
 <br>
 
