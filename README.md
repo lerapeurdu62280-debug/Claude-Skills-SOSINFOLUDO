@@ -71,6 +71,7 @@ Le script ne fait qu'ajouter des boutiques et des skills : relisez [`install.ps1
 | [`hookify`](https://github.com/anthropics/claude-plugins-official) | Transforme une règle (« ne jamais lancer d'appli sans accord ») en garde-fou automatique plutôt qu'en promesse. |
 | [`self-improving-agent`](https://github.com/alirezarezvani/claude-skills) | Entretient la mémoire de Claude : ce qu'il faut garder, fusionner ou oublier. |
 | [`graphify`](https://github.com/Graphify-Labs/graphify) | Transforme un projet en carte de connaissances : indispensable pour retrouver ce qui est câblé (ou pas) dans un gros logiciel. |
+| [`find-skills`](https://github.com/vercel-labs/skills) | Quand on se demande « existe-t-il un skill pour ça ? », Claude cherche dans le catalogue skills.sh et vérifie la réputation (installations, auteur) avant de proposer quoi que ce soit. |
 
 ### 🌐 Site web et design
 

@@ -36,14 +36,15 @@ elseif (Manque 'csharp-ls') {
 $skills = Join-Path $HOME '.claude\skills'
 New-Item -ItemType Directory -Force $skills | Out-Null
 
-Etape 'Skills de design (npx skills)'
+Etape 'Skills via npx skills (design + find-skills)'
 # Node installé mais absent du PATH de cette fenêtre (installation récente) : on l'ajoute
 $nodeDir = Join-Path $env:ProgramFiles 'nodejs'
 if ((Manque 'npx') -and (Test-Path "$nodeDir\npx.cmd")) { $env:Path = "$nodeDir;$env:Path" }
-if (Manque 'npx') { Write-Host 'Node.js absent : hallmark et web-design-engineer ignorés.' -ForegroundColor Yellow }
+if (Manque 'npx') { Write-Host 'Node.js absent : hallmark, web-design-engineer et find-skills ignorés.' -ForegroundColor Yellow }
 else {
   npx -y skills add nutlope/hallmark -g --agent claude-code
   npx -y skills add ConardLi/garden-skills -g --agent claude-code --skill web-design-engineer
+  npx -y skills add vercel-labs/skills -g --agent claude-code --skill find-skills
 }
 
 $tmp = Join-Path ([IO.Path]::GetTempPath()) ("skills-" + [guid]::NewGuid())
