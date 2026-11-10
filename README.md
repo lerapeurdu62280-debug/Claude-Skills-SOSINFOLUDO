@@ -84,6 +84,7 @@ Le script ne fait qu'ajouter des boutiques et des skills : relisez [`install.ps1
 | [`nothing-design`](https://github.com/dominikmartn/nothing-design-skill) | Un style graphique précis (Nothing), sur demande uniquement. |
 | [`landing`](https://github.com/alirezarezvani/claude-skills) | Pages de présentation en un seul fichier pour les vitrines de logiciels. |
 | [`demo-video`](https://github.com/alirezarezvani/claude-skills) | Vidéos de démonstration à partir de captures d'écran. |
+| [`boraoztunc/skills`](https://github.com/boraoztunc/skills) | 71 skills réunis : finitions d'interface (`impeccable`, `better-ui`, typo, couleurs, accessibilité), rédaction (`copywriting`, `stop-slop`), SEO, et vidéos en HTML (`hyperframes`, GSAP, Three.js). |
 
 ### 💶 Vente et commerce
 

@@ -56,6 +56,12 @@ try {
     Copy-Item -Recurse "$tmp\nothing\nothing-design" $skills
   } else { Write-Host 'déjà présent' }
 
+  Etape 'Skills boraoztunc (design, rédaction, SEO, animation)'
+  git clone -q --depth 1 https://github.com/boraoztunc/skills.git "$tmp\bora"
+  Get-ChildItem -Directory "$tmp\bora" | Where-Object { Test-Path "$($_.FullName)\SKILL.md" } | ForEach-Object {
+    if (Test-Path "$skills\$($_.Name)") { Write-Host "$($_.Name) déjà présent" } else { Copy-Item -Recurse $_.FullName $skills }
+  }
+
   Etape 'Skills bitranox (4 dossiers seulement, sans le plugin ni son hook)'
   $bx = 'infra-windows-servicing', 'compuse-ssh', 'process-debug-systematic', 'docs-convert-markitdown'
   git clone -q --depth 1 --filter=blob:none --sparse https://github.com/bitranox/bitranox-skills.git "$tmp\bx"
