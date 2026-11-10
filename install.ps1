@@ -62,6 +62,12 @@ try {
     if (Test-Path "$skills\$($_.Name)") { Write-Host "$($_.Name) déjà présent" } else { Copy-Item -Recurse $_.FullName $skills }
   }
 
+  Etape 'Skills replica (refaire une appli façon salle blanche)'
+  git clone -q --depth 1 https://github.com/Jakeschincariol/replica-skill.git "$tmp\replica"
+  Get-ChildItem -Directory "$tmp\replica" -Filter 'replica-*' | ForEach-Object {
+    if (Test-Path "$skills\$($_.Name)") { Write-Host "$($_.Name) déjà présent" } else { Copy-Item -Recurse $_.FullName $skills }
+  }
+
   Etape 'Skills bitranox (4 dossiers seulement, sans le plugin ni son hook)'
   $bx = 'infra-windows-servicing', 'compuse-ssh', 'process-debug-systematic', 'docs-convert-markitdown'
   git clone -q --depth 1 --filter=blob:none --sparse https://github.com/bitranox/bitranox-skills.git "$tmp\bx"
