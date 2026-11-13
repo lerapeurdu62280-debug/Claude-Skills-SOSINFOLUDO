@@ -81,6 +81,7 @@ Le script ne fait qu'ajouter des boutiques et des skills : relisez [`install.ps1
 | [`vercel`](https://github.com/anthropics/claude-plugins-official) | Le site de l'atelier est hébergé sur Vercel : déploiements, journaux, variables. |
 | [`design-engineering`](https://github.com/AgentsORG/design-engineering) | Les détails qui font qu'une interface « fait pro » : animations, typo, accessibilité, avec relecteurs dédiés. |
 | [`hallmark`](https://github.com/Nutlope/hallmark) | Éviter le look « généré par IA » sur les pages web. |
+| [`unslop`](https://github.com/heydamir/unslop) | Reprendre une interface qui « fait IA » passe par passe (espacements, couleurs, textes, typo), comme une relecture de designer. |
 | [`web-design-engineer`](https://github.com/ConardLi/garden-skills) | Maquettes et prototypes web soignés, vérifiés dans le navigateur. |
 | [`nothing-design`](https://github.com/dominikmartn/nothing-design-skill) | Un style graphique précis (Nothing), sur demande uniquement. |
 | [`landing`](https://github.com/alirezarezvani/claude-skills) | Pages de présentation en un seul fichier pour les vitrines de logiciels. |

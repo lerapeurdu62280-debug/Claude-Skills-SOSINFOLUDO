@@ -56,6 +56,12 @@ try {
     Copy-Item -Recurse "$tmp\nothing\nothing-design" $skills
   } else { Write-Host 'déjà présent' }
 
+  Etape 'unslop'
+  if (-not (Test-Path "$skills\unslop")) {
+    git clone -q --depth 1 https://github.com/heydamir/unslop.git "$tmp\unslop"
+    Copy-Item -Recurse "$tmp\unslop\skills\unslop" $skills
+  } else { Write-Host 'déjà présent' }
+
   Etape 'Skills boraoztunc (design, rédaction, SEO, animation)'
   git clone -q --depth 1 https://github.com/boraoztunc/skills.git "$tmp\bora"
   Get-ChildItem -Directory "$tmp\bora" | Where-Object { Test-Path "$($_.FullName)\SKILL.md" } | ForEach-Object {
