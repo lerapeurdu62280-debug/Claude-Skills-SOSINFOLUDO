@@ -65,14 +65,10 @@ Le script ne fait qu'ajouter des boutiques et des skills : relisez [`install.ps1
 | Skill | Pourquoi on l'a choisi |
 |---|---|
 | [`csharp-lsp`](https://github.com/anthropics/claude-plugins-official) | Nos logiciels sont en C# / WPF : Claude voit les erreurs et navigue dans le code comme Visual Studio. |
-| [`engineering-skills`](https://github.com/alirezarezvani/claude-skills) | Revue de code, sécurité, tests, frontend. Une partie (AWS, Azure, M365) ne nous sert pas, mais le paquet ne se découpe pas et le reste vaut le coup. |
 | [`security-guidance`](https://github.com/anthropics/claude-plugins-official) | Signale les failles classiques pendant l'écriture : important pour des logiciels vendus avec licence. |
+| [`token-optimizer`](https://github.com/alexgreensh/token-optimizer) | Moins de tokens par session : audit de la configuration, compression des relectures et des sorties de commandes, sauvegarde avant compaction. Gratuit pour les petites entreprises. |
 | [`ponytail`](https://github.com/DietrichGebert/ponytail) | Force la solution la plus simple qui marche. Moins de code, moins de bugs. |
-| [`hookify`](https://github.com/anthropics/claude-plugins-official) | Transforme une règle (« ne jamais lancer d'appli sans accord ») en garde-fou automatique plutôt qu'en promesse. |
-| [`self-improving-agent`](https://github.com/alirezarezvani/claude-skills) | Entretient la mémoire de Claude : ce qu'il faut garder, fusionner ou oublier. |
 | [`graphify`](https://github.com/Graphify-Labs/graphify) | Transforme un projet en carte de connaissances : indispensable pour retrouver ce qui est câblé (ou pas) dans un gros logiciel. |
-| [`replica`](https://github.com/Jakeschincariol/replica-skill) | 11 skills pour créer notre propre version d'une appli existante : on refait ce qu'elle fait, jamais son code, son logo ni ses textes, puis on corrige ce que ses utilisateurs lui reprochent. |
-| [`find-skills`](https://github.com/vercel-labs/skills) | Quand on se demande « existe-t-il un skill pour ça ? », Claude cherche dans le catalogue skills.sh et vérifie la réputation (installations, auteur) avant de proposer quoi que ce soit. |
 
 ### 🌐 Site web et design
 
@@ -83,10 +79,8 @@ Le script ne fait qu'ajouter des boutiques et des skills : relisez [`install.ps1
 | [`hallmark`](https://github.com/Nutlope/hallmark) | Éviter le look « généré par IA » sur les pages web. |
 | [`unslop`](https://github.com/heydamir/unslop) | Reprendre une interface qui « fait IA » passe par passe (espacements, couleurs, textes, typo), comme une relecture de designer. |
 | [`web-design-engineer`](https://github.com/ConardLi/garden-skills) | Maquettes et prototypes web soignés, vérifiés dans le navigateur. |
-| [`nothing-design`](https://github.com/dominikmartn/nothing-design-skill) | Un style graphique précis (Nothing), sur demande uniquement. |
-| [`landing`](https://github.com/alirezarezvani/claude-skills) | Pages de présentation en un seul fichier pour les vitrines de logiciels. |
 | [`demo-video`](https://github.com/alirezarezvani/claude-skills) | Vidéos de démonstration à partir de captures d'écran. |
-| [`boraoztunc/skills`](https://github.com/boraoztunc/skills) | 71 skills réunis : finitions d'interface (`impeccable`, `better-ui`, typo, couleurs, accessibilité), rédaction (`copywriting`, `stop-slop`), SEO, et vidéos en HTML (`hyperframes`, GSAP, Three.js). |
+| [`boraoztunc/skills`](https://github.com/boraoztunc/skills) | 22 skills choisis dans le dépôt : finitions d'interface (`impeccable`, `better-ui`, typo, couleurs, accessibilité), pages (`landing-page`, prise de rendez-vous) et rédaction (`stop-slop`). |
 
 ### 💶 Vente et commerce
 
@@ -95,8 +89,6 @@ Le script ne fait qu'ajouter des boutiques et des skills : relisez [`install.ps1
 | [`paypal`](https://github.com/anthropics/claude-plugins-official) | Nos logiciels se paient par PayPal : intégration du paiement et des licences. |
 | [`sumup`](https://github.com/anthropics/claude-plugins-official) | Paiement en ligne et terminal SumUp, déjà utilisé sur un site e-commerce. |
 | [`marketing-skills`](https://github.com/alirezarezvani/claude-skills) | Référencement local (Google Business, Maps), posts réseaux sociaux, fiches produits. |
-| [`business-growth-skills`](https://github.com/alirezarezvani/claude-skills) | Suivi clients et rédaction de devis / propositions. |
-| [`finance-skills`](https://github.com/alirezarezvani/claude-skills) | Analyse de prix et de rentabilité. |
 
 ### 💬 Communauté
 
@@ -124,6 +116,8 @@ Le script ne fait qu'ajouter des boutiques et des skills : relisez [`install.ps1
 | [vstoos/vlog-film](https://github.com/vstoos/vlog-film) | Sérieux, mais réservé au montage de vlogs YouTube et très lourd (GPU NVIDIA, ~10 Go). |
 | [EJRyan89/coding-agent-skills](https://github.com/EJRyan89/coding-agent-skills) | Projet propre mais orienté équipes ; son pack `dotnet` fait doublon avec `dotnet format`. |
 | `fullstack-dev-skills` | Doublon d'`engineering-skills`. |
+| `engineering-skills`, `hookify`, `self-improving-agent`, `business-growth-skills`, `finance-skills`, `landing`, `replica`, `find-skills`, `nothing-design` | Installés au départ mais jamais utilisés : retirés le 24/11/2026 pour alléger chaque session. |
+| Le reste de `boraoztunc/skills` (vidéo `hyperframes`, effets décoratifs, pages SaaS, doublons de `marketing-skills`) | Même raison : jamais utilisé, ou déjà couvert par un autre skill. |
 
 <br>
 
